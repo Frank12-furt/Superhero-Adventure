@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="adventureApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Superhero Adventure</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- App Script -->
+    <script src="app.js"></script>
+</head>
+
+
+<body ng-controller="AdventureController">
+    <div class="container">
+        <h1 class="text-center">Superhero Rescue Mission</h1>
+        <div class="well">
+            <p class="story-text">{{currentScene.story}}</p>
+        </div>
+        <div class="options">
+            <div class="option" ng-repeat="option in currentScene.options" ng-click="chooseOption(option)" ng-style="{'border-color': option.color}">
+                <span class="arrow" ng-style="{'color': option.color}" ng-bind="option.arrow"></span>
+                <span class="option-text">{{option.text}}</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
